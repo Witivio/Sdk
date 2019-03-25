@@ -19,5 +19,7 @@
     <PackageReference Include="Microsoft.AspNetCore" Version="2.2.0" />
     <PackageReference Include="Witivio.Sdk" Version="0.0.1-beta" />
   </ItemGroup>
-
+  <Target Name="CopyPackage" AfterTargets="Pack" Condition="'$(Configuration)' == 'Release' ">
+    <Copy SourceFiles="$(OutputPath)\..\$(PackageId).$(PackageVersion).nupkg" DestinationFolder="$(PackageLocation)" />
+  </Target>
 </Project>
