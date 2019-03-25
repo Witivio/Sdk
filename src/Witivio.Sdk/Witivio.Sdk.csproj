@@ -12,7 +12,7 @@
     <PackageProjectUrl>https://www.witivio.com</PackageProjectUrl>
     <PackageIconUrl>https://pbs.twimg.com/profile_images/844869406723194880/uAg8-QaT_400x400.jpg</PackageIconUrl>
     <Product>Witivio Sdk</Product>
-    <Version>0.0.1-beta</Version>
+    <Version>1.0.2.0</Version>
   </PropertyGroup>
 
   <ItemGroup>
