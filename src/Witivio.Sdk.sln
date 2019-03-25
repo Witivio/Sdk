@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2048
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Witivio.Sdk", "Witivio.Sdk\Witivio.Sdk.csproj", "{391AEC6E-CC6B-440C-B11D-02F4A31688C9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Witivio.Sdk.AspNet", "Witivio.Sdk.AspNet\Witivio.Sdk.AspNet.csproj", "{630637AE-1B07-4CC7-9119-5688F0C2DC98}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{391AEC6E-CC6B-440C-B11D-02F4A31688C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{391AEC6E-CC6B-440C-B11D-02F4A31688C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{391AEC6E-CC6B-440C-B11D-02F4A31688C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{391AEC6E-CC6B-440C-B11D-02F4A31688C9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{630637AE-1B07-4CC7-9119-5688F0C2DC98}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{630637AE-1B07-4CC7-9119-5688F0C2DC98}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{630637AE-1B07-4CC7-9119-5688F0C2DC98}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{630637AE-1B07-4CC7-9119-5688F0C2DC98}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5F3E140A-36E4-40A8-9273-590370A3CC74}
+	EndGlobalSection
+EndGlobal

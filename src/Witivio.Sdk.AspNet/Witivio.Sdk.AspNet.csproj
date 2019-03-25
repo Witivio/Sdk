@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <Authors>Witivio</Authors>
+    <Company>Witivio</Company>
+    <Product>Witivio Sdk</Product>
+    <Copyright>Witivio</Copyright>
+    <PackageLicenseUrl>https://github.com/Witivio/Sdk/blob/master/LICENSE</PackageLicenseUrl>
+    <PackageProjectUrl>https://www.witivio.com</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/Witivio/Sdk</RepositoryUrl>
+    <PackageIconUrl>https://pbs.twimg.com/profile_images/844869406723194880/uAg8-QaT_400x400.jpg</PackageIconUrl>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Version>0.0.1-beta</Version>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore" Version="2.2.0" />
+    <PackageReference Include="Witivio.Sdk" Version="0.0.1-beta" />
+  </ItemGroup>
+
+</Project>
