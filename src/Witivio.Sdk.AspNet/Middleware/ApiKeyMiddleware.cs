@@ -11,14 +11,12 @@ namespace Witivio.Sdk.AspNet
     {
         private readonly RequestDelegate _next;
         private readonly ApiKeyOptions _options;
-        private const string HEADER = "apiKey";
+        private const string HEADER = "witivio-apikey";
 
         public ApiKeyMiddleware(RequestDelegate next, ApiKeyOptions options)
         {
-            if (options == null) throw new ArgumentNullException(nameof(options));
+            _options = options ?? throw new ArgumentNullException(nameof(options));
             _next = next;
-            _options = options;
-
         }
 
         public async Task Invoke(HttpContext context)
@@ -32,10 +30,7 @@ namespace Witivio.Sdk.AspNet
                         await _next(context);
                 }
             }
-            else
-            {
-                context.Response.StatusCode = 403;
-            }
+            context.Response.StatusCode = 403;
         }
     }
 }

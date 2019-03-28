@@ -8,8 +8,17 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
-    <PackageReference Include="Witivio.Sdk" Version="0.0.1-beta" />
-    <PackageReference Include="Witivio.Sdk.AspNet" Version="0.0.1-beta" />
+    <PackageReference Include="Witivio.Sdk" Version="2019.3.26.1" />
+    <PackageReference Include="Witivio.Sdk.AspNet" Version="2019.3.26.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Witivio.Sdk">
+      <HintPath>..\..\..\src\Witivio.Sdk\bin\Debug\netstandard2.0\Witivio.Sdk.dll</HintPath>
+    </Reference>
+    <Reference Include="Witivio.Sdk.AspNet">
+      <HintPath>..\..\..\src\Witivio.Sdk.AspNet\bin\Debug\netstandard2.0\Witivio.Sdk.AspNet.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
 </Project>

@@ -12,8 +12,7 @@ namespace Witivio.Sdk.AspNet
 
         public WitivioBotIdMiddleware(RequestDelegate next, WitivioBotIdOptions options)
         {
-            if (options == null) throw new ArgumentNullException(nameof(options));
-            _options = options;
+            _options = options ?? throw new ArgumentNullException(nameof(options));
             _next = next;
         }
 
@@ -28,10 +27,7 @@ namespace Witivio.Sdk.AspNet
                         await _next(context);
                 }
             }
-            else
-            {
-                context.Response.StatusCode = 403;
-            }
+            context.Response.StatusCode = 403;
         }
     }
 }

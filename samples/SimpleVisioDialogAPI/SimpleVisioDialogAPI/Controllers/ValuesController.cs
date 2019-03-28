@@ -17,6 +17,7 @@ namespace SimpleVisioDialogAPI.Controllers
         {
             // Read a parameter variable from the visio dialog
             var requestId = visioDialog.GetPropertyValue("REQUEST_ID");
+            
 
             // wrap the dto
             var result = new ResultWrapper<SimpleDto>(new SimpleDto
