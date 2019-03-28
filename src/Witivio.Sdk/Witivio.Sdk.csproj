@@ -1,0 +1,24 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <Authors>Witivio</Authors>
+    <Company>Witivio</Company>
+    <RepositoryUrl>https://github.com/Witivio/Sdk</RepositoryUrl>
+    <Copyright>Witivio</Copyright>
+    <PackageLicenseUrl>https://github.com/Witivio/Sdk/blob/master/LICENSE</PackageLicenseUrl>
+    <PackageProjectUrl>https://www.witivio.com</PackageProjectUrl>
+    <PackageIconUrl>https://pbs.twimg.com/profile_images/844869406723194880/uAg8-QaT_400x400.jpg</PackageIconUrl>
+    <Product>Witivio Sdk</Product>
+    <Version>1.0.2.0</Version>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.1" />
+  </ItemGroup>
+  <Target Name="CopyPackage" AfterTargets="Pack" Condition="'$(Configuration)' == 'Release' ">
+    <Copy SourceFiles="$(OutputPath)\..\$(PackageId).$(PackageVersion).nupkg" DestinationFolder="$(PackageLocation)" />
+  </Target>
+</Project>
