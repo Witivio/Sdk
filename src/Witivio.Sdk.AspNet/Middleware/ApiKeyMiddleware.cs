@@ -27,7 +27,10 @@ namespace Witivio.Sdk.AspNet
                 if (!string.IsNullOrWhiteSpace(apiKeyValue))
                 {
                     if (apiKeyValue == _options.ApiKey)
+                    {
                         await _next(context);
+                        return;
+                    }
                 }
             }
             context.Response.StatusCode = 403;
