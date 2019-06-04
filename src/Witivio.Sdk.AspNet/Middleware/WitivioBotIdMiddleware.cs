@@ -24,7 +24,10 @@ namespace Witivio.Sdk.AspNet
                 if (!string.IsNullOrWhiteSpace(botIdValue))
                 {
                     if (botIdValue == _options.BotId)
+                    {
                         await _next(context);
+                        return;
+                    }
                 }
             }
             context.Response.StatusCode = 403;
