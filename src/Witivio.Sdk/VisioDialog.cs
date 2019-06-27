@@ -18,6 +18,12 @@ namespace Witivio.Sdk
         [JsonProperty("userName")]
         public string UserName { get; set; }
 
+        [JsonProperty("conversationHistory")]
+        public IEnumerable<string> ConversationHistory { get; set; }
+
+        [JsonProperty("initialQuestion")]
+        public string InitialQuestion { get; set; }
+
         [JsonProperty("api")]
         public JToken Api { get; set; }
 
