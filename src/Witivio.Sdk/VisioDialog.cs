@@ -21,8 +21,17 @@ namespace Witivio.Sdk
         [JsonProperty("conversationHistory")]
         public IEnumerable<string> ConversationHistory { get; set; }
 
+        /// <summary>
+        /// Message sent to the bot that trigger the conversation tree
+        /// </summary>
         [JsonProperty("initialMessage")]
         public string InitialMessage { get; set; }
+
+        /// <summary>
+        /// Message initialy sent to the bot. Used for escalation
+        /// </summary>
+        [JsonProperty("initialQuestion")]
+        public string InitialQuestion { get; set; }
 
         [JsonProperty("channel")]
         public string Channel { get; set; }
