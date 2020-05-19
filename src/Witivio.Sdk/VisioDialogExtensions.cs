@@ -6,6 +6,12 @@ namespace Witivio.Sdk
 {
     public static class VisioDialogExtensions
     {
+        /// <summary>
+        /// Get the value of a property. Generally its a variable collected in a dialog
+        /// </summary>
+        /// <param name="dto"></param>
+        /// <param name="propertyName"></param>
+        /// <returns></returns>
         public static string GetPropertyValue(this VisioDialog dto, string propertyName)
         {
             if (dto.Properties == null)

@@ -6,18 +6,39 @@ namespace Witivio.Sdk
 {
     public class VisioDialog
     {
+        /// <summary>
+        /// Unique Id of a user
+        /// </summary>
         [JsonProperty("userId")]
         public string UserId { get; set; }
 
+        /// <summary>
+        /// Id of the profile
+        /// </summary>
         [JsonProperty("userProfileId")]
         public string UserProfileId { get; set; }
 
+        /// <summary>
+        /// Name of the profile
+        /// </summary>
         [JsonProperty("userProfileName")]
         public string UserProfileName { get; set; }
 
+        /// <summary>
+        /// ID of the tenant (only sent from Teams channel)
+        /// </summary>
+        [JsonProperty("tenantId")]
+        public string TenantId { get; set; }
+
+        /// <summary>
+        /// Username / Display name of a user
+        /// </summary>
         [JsonProperty("userName")]
         public string UserName { get; set; }
 
+        /// <summary>
+        /// Full history of the conversation
+        /// </summary>
         [JsonProperty("conversationHistory")]
         public IEnumerable<string> ConversationHistory { get; set; }
 
@@ -33,12 +54,18 @@ namespace Witivio.Sdk
         [JsonProperty("initialQuestion")]
         public string InitialQuestion { get; set; }
 
+        /// <summary>
+        /// Channel of the chatbot
+        /// </summary>
         [JsonProperty("channel")]
         public string Channel { get; set; }
 
         [JsonProperty("api")]
         public JToken Api { get; set; }
 
+        /// <summary>
+        /// Additionnal properties collected during a dialog
+        /// </summary>
         [JsonExtensionData]
         public Dictionary<string, JToken> Properties { get; set; }
     }
