@@ -13,6 +13,13 @@ namespace Witivio.Sdk
         public string UserId { get; set; }
 
         /// <summary>
+        /// The language spoken by the user. The value is detected by the chatbot.
+        /// The format is TwoLetterISOLanguageName. Ex: en or fr
+        /// </summary>
+        [JsonProperty("userLanguage")]
+        public string UserLanguage { get; set; }
+
+        /// <summary>
         /// Id of the profile
         /// </summary>
         [JsonProperty("userProfileId")]
