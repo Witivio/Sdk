@@ -12,7 +12,7 @@ app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
 
 app.post('/testSendMessage',async (req, res, next)=>{
   try{
-    const messageSendToBot = "Hi " + req.body.userName + ", I'm " + req.body.botName + "we are in " + req.body.channel + "and i answer from the question" + req.body.question;
+    const messageSendToBot = "Hi " + req.body.userName + ", I'm " + req.body.botName + " we are in " + req.body.channel + " and i answer from the question " + req.body.question;
     const messageDto = new MessageDto()
     messageDto.init({
         botId: req.body.botId,
@@ -86,7 +86,7 @@ app.post('/testAskFeedback',async (req, res, next)=>{
 
 app.post('/testAskQuestion',async (req, res, next)=>{
   try{
-   console.log("ici")
+   res.end();
     const questionDto = new QuestionDto()
     questionDto.init({
         botId: req.body.botId,
@@ -100,7 +100,6 @@ app.post('/testAskQuestion',async (req, res, next)=>{
     let instance = axios.create({httpsAgent})
     let response = await askQuestion(questionDto, instance);
     console.log(response.message)
-    res.end();
   } catch(err){
     next(err);
   }
@@ -108,7 +107,7 @@ app.post('/testAskQuestion',async (req, res, next)=>{
 
 app.post('/testAskQuestionWithList',async (req, res, next)=>{
   try{
-   console.log("ici")
+   res.end();
     const questionDto = new QuestionDto()
     questionDto.init({
         botId: req.body.botId,
@@ -129,11 +128,7 @@ app.post('/testAskQuestionWithList',async (req, res, next)=>{
     })
     let instance = axios.create({httpsAgent})
     let response = await askQuestionWithList(questionDto, instance);
-    while(response.status == 202){
-      response = await waitForResponse(response.message, instance)
-    }
     console.log(response.message)
-    res.end();
   } catch(err){
     next(err);
   }

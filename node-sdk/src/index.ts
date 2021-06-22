@@ -3,7 +3,7 @@ import { AskQuestionResponse, FeedbackDto, MessageDto, QuestionDto } from "../se
 
 import { WebhookClient } from "../services/webhookClient";
 const initService = async(axiosInstance ?:AxiosInstance) => {
-    let client = axiosInstance ? new WebhookClient("https://app-dev.witivio.com", axiosInstance) : new WebhookClient("https://app-dev.witivio.com");
+    let client = axiosInstance ? new WebhookClient("https://localhost:7092", axiosInstance) : new WebhookClient("https://localhost:7092");
     return client;
 }
 
@@ -31,13 +31,16 @@ export const askQuestion = async (questionDto : QuestionDto, axiosInstance? : Ax
         await sleep(5000);
         response = response.message ? await client.waitForResponse(response.message) : new AskQuestionResponse();
     }
-    console.log(response)
     return response ? response : null;
 };
 
 export const askQuestionWithList = async (questionDto : QuestionDto, axiosInstance? : AxiosInstance) =>{
     let client = await initService(axiosInstance);
     let response = await client.askQuestionWithList(questionDto);
+    while(response.status == 202){
+        await sleep(5000);
+        response = response.message ? await client.waitForResponse(response.message) : new AskQuestionResponse();
+    }
     return response ? response : null;
 };
 

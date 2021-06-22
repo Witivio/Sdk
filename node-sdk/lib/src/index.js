@@ -13,7 +13,7 @@ exports.waitForResponse = exports.askQuestionWithList = exports.askQuestion = ex
 const webhookClient_1 = require("../services/webhookClient");
 const webhookClient_2 = require("../services/webhookClient");
 const initService = (axiosInstance) => __awaiter(void 0, void 0, void 0, function* () {
-    let client = axiosInstance ? new webhookClient_2.WebhookClient("https://app-dev.witivio.com", axiosInstance) : new webhookClient_2.WebhookClient("https://app-dev.witivio.com");
+    let client = axiosInstance ? new webhookClient_2.WebhookClient("https://localhost:7092", axiosInstance) : new webhookClient_2.WebhookClient("https://localhost:7092");
     return client;
 });
 const sendMessage = (messageDto, axiosInstance) => __awaiter(void 0, void 0, void 0, function* () {
@@ -40,13 +40,16 @@ const askQuestion = (questionDto, axiosInstance) => __awaiter(void 0, void 0, vo
         yield sleep(5000);
         response = response.message ? yield client.waitForResponse(response.message) : new webhookClient_1.AskQuestionResponse();
     }
-    console.log(response);
     return response ? response : null;
 });
 exports.askQuestion = askQuestion;
 const askQuestionWithList = (questionDto, axiosInstance) => __awaiter(void 0, void 0, void 0, function* () {
     let client = yield initService(axiosInstance);
     let response = yield client.askQuestionWithList(questionDto);
+    while (response.status == 202) {
+        yield sleep(5000);
+        response = response.message ? yield client.waitForResponse(response.message) : new webhookClient_1.AskQuestionResponse();
+    }
     return response ? response : null;
 });
 exports.askQuestionWithList = askQuestionWithList;
