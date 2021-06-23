@@ -3,7 +3,7 @@ import { AskQuestionResponse, FeedbackDto, MessageDto, QuestionDto } from "../se
 
 import { WebhookClient } from "../services/webhookClient";
 const initService = async(axiosInstance ?:AxiosInstance) => {
-    let client = axiosInstance ? new WebhookClient("https://localhost:7092", axiosInstance) : new WebhookClient("https://localhost:7092");
+    let client = axiosInstance ? new WebhookClient("https://app.witivio.com", axiosInstance) : new WebhookClient("https://app.witivio.com");
     return client;
 }
 

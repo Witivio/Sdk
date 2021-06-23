@@ -13,7 +13,7 @@ exports.waitForResponse = exports.askQuestionWithList = exports.askQuestion = ex
 const webhookClient_1 = require("../services/webhookClient");
 const webhookClient_2 = require("../services/webhookClient");
 const initService = (axiosInstance) => __awaiter(void 0, void 0, void 0, function* () {
-    let client = axiosInstance ? new webhookClient_2.WebhookClient("https://localhost:7092", axiosInstance) : new webhookClient_2.WebhookClient("https://localhost:7092");
+    let client = axiosInstance ? new webhookClient_2.WebhookClient("https://app.witivio.com", axiosInstance) : new webhookClient_2.WebhookClient("https://app.witivio.com");
     return client;
 });
 const sendMessage = (messageDto, axiosInstance) => __awaiter(void 0, void 0, void 0, function* () {
